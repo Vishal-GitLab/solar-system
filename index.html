@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System Animation</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(176, 177, 166);
+    background-image: url(https://cdn.mos.cms.futurecdn.net/HuGGeENt6kGyixe3hT9tnY-1200-80.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.solar-system {
+    position: relative;
+    width: 800px;
+    height: 600px;
+}
+
+.sun {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    background-color: rgb(255, 230, 0);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 20px rgba(0, 255, 64, 0.8);
+}
+
+.planet {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 50% 50%;
+    background-image: url(https://atlas-content-cdn.pixelsquid.com/stock-images/mercury-planet-planets-1VZdzDC-600.jpg);
+}
+
+.planet-item {
+    width: 40px;
+    height: 30px;
+    background-color: gray;
+    border-radius: 50%;
+}
+
+.orbit-1 {
+    animation: orbit-1 6s linear infinite;
+}
+
+.orbit-2 {
+    animation: orbit-2 12s linear infinite;
+}
+
+.orbit-3 {
+    animation: orbit-3 18s linear infinite;
+}
+
+.orbit-4 {
+    animation: orbit-4 24s linear infinite;
+}
+
+.orbit-5 {
+    animation: orbit-5 30s linear infinite;
+}
+
+@keyframes orbit-1 {
+    0% {
+        transform: rotate(0deg) translateX(100px);
+    }
+    100% {
+        transform: rotate(360deg) translateX(100px);
+    }
+}
+
+@keyframes orbit-2 {
+    0% {
+        transform: rotate(0deg) translateX(150px);
+    }
+    100% {
+        transform: rotate(360deg) translateX(150px);
+    }
+}
+
+@keyframes orbit-3 {
+    0% {
+        transform: rotate(0deg) translateX(200px);
+    }
+    100% {
+        transform: rotate(360deg) translateX(200px);
+    }
+}
+
+@keyframes orbit-4 {
+    0% {
+        transform: rotate(0deg) translateX(250px);
+    }
+    100% {
+        transform: rotate(360deg) translateX(250px);
+    }
+}
+
+@keyframes orbit-5 {
+    0% {
+        transform: rotate(0deg) translateX(300px);
+    }
+    100% {
+        transform: rotate(360deg) translateX(300px);
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="solar-system">
+        <div class="sun"></div>
+        <div class="planet orbit-1">
+            <div class="planet-item"></div>
+        </div>
+        <div class="planet orbit-2">
+            <div class="planet-item"></div>
+        </div>
+        <div class="planet orbit-3">
+            <div class="planet-item"></div>
+        </div>
+        <div class="planet orbit-4">
+            <div class="planet-item"></div>
+        </div>
+        <div class="planet orbit-5">
+            <div class="planet-item"></div>
+        </div>
+    </div>
+    <script src="script.js">
+      // Example JavaScript functionality (optional)
+document.querySelectorAll('.planet').forEach(planet => {
+    planet.addEventListener('mouseover', () => {
+        planet.querySelector('.planet-item').style.backgroundColor = 'blue';
+    });
+    planet.addEventListener('mouseout', () => {
+        planet.querySelector('.planet-item').style.backgroundColor = 'gray';
+    });
+});
+
+    </script>
+</body>
+</html>
